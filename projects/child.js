@@ -1,6 +1,6 @@
-process.on('message', (message) =>{
-    //imprimimos mensaje recibido
-    console.log(`regalo: ${message}`)
-    //contestar mensaje al padre
-    process.send({received: true});
-});npm
+process.on('message',(message)=> {
+    //imprimimos el mensaje recibido
+    console.log(`🃏_🎅_↪_🧒: ${message}`);
+    //Respondemos mensaje al padre
+    process.send({message: '💫and a happy new year💫'});
+})

@@ -1,12 +1,16 @@
-import {fork} from 'child_process'
-export function ipc(){
-    console.log("Comunicaciones entre procesos")
-    //creando un subproceso de node
-    const child = fork('child.js');
-    //registrar eventos
-    child.on('mesages', (message) =>{
-        console.log(`hola: $(message)`);
-    });
-    //enviando un mensaje al proceso hijo
-    child.send({message: 'merry christmas'})
+import {fork} from 'child_processes';
+
+export function ipc() {
+    console.log("=== 🔮Comunicacion entre procesos ===");
+      //1. creando un subproceso de Node
+      const child = fork('./projects/child.js');
+
+      //2. Registrando eventos
+      child.on('message', (message) => {
+        console.log(`🃏_➡_🤶: ${message}`);
+      });
+      
+      //Enviando un mensaje al proceso hijo
+      child.send({message: '❄ Merry christmas ❄'});
+
 }
