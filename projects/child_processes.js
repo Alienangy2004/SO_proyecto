@@ -3,26 +3,26 @@ spwan
 exec
 fork
 */
-import{spawn, exec, fork } from 'child_processes';
-
+import {spawn} from 'child_process';
 
 export function childprocesses() {
-    console.log("=== 👶creacion de proceoso hijo👦 ===");
-    console.log("📢creando un child process");
-    const childprocesses = spawn('ls',['-l']);
-    
-    // manejando en mi child process
-    childprocesses.stdout.on('data', (data) => {
-        console.log(`✍ouput: ${data}`);
+    console.log("=== 👶 Creación de proceso hijo 👦 ===");
+    console.log("📢 Creando un child process");
+
+    const childprocess = spawn('ls', ['-l']); // Cambia 'ls' por 'dir' en Windows si es necesario.
+
+    // Manejando la salida del proceso hijo
+    childprocess.stdout.on('data', (data) => {
+        console.log(`✍ Output: ${data}`);
     });
 
-    //manejando errores
-    childprocesses.stderr.on('data', (data) => {
-        console.log(`🚫 output: ${data}`)
+    // Manejando errores
+    childprocess.stderr.on('data', (data) => {
+        console.error(`🚫 Error: ${data}`);
     });
 
-    //evento close
-    childprocesses.on('close', (code) => {
-        console.log(`▶ Proceso terminado con el codigo:  ${code}`)
+    // Evento de cierre
+    childprocess.on('close', (code) => {
+        console.log(`▶ Proceso terminado con el código: ${code}`);
     });
 }

@@ -5,12 +5,12 @@
   "type":"module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js 1",
-    "dev": "node --watch index.js"
+    "start": "node index.js",
+    "dev": "node"
   },
   "repository": {
     "type": "git",
-    "url": "htpps://github.com/Alienangy2004/SO_proyecto"
+    "url": "https://github.com/Alienangy2004/SO_proyecto.git"
   },
   "keywords": [
     "operating",
